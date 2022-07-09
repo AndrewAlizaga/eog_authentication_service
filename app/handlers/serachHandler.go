@@ -3,11 +3,14 @@ package handlers
 import (
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 
 	Account "github.com/AndrewAlizaga/eog_authentication_service/app/models/account"
 	"github.com/AndrewAlizaga/eog_authentication_service/app/security/encryption"
 	serviceModels "github.com/AndrewAlizaga/eog_authentication_service/app/services/models"
+	searchv1 "github.com/AndrewAlizaga/eog_protos/pkg/proto/search"
+	searchService "github.com/AndrewAlizaga/grpc_client_eog_go/pkg/search"
 	"github.com/gin-gonic/gin"
 )
 
@@ -73,26 +76,31 @@ func GetCaseById(c *gin.Context) {
 
 func PostSearch(c *gin.Context) {
 
-	var accountUpdate Account.AccountRequest
+	var searchPost searchv1.Search
 
-	accountParameter := c.Param("id")
+	personParameter := c.Param("person")
+	siteParameter := c.Param("site")
 
-	if accountParameter == "" {
+	log.Println(personParameter)
+	log.Println(siteParameter)
+
+	if personParameter == ""{
 		c.IndentedJSON(http.StatusBadRequest, nil)
 		return
 	}
 
-	fmt.Println("PARAMETER: ", accountParameter)
-	err := c.BindJSON(&accountUpdate)
 
-	if err != nil {
+	if err := c.BindJSON(&searchPost); err != nil {
 		c.IndentedJSON(http.StatusBadRequest, nil)
 		return
 	}
 
-	fmt.Println("ACCOUNT REQUEST: ", accountUpdate)
 
-	result, err := serviceModels.UpdateAccount(accountParameter, accountUpdate)
+	fmt.Println("SEARCH REQUEST: ", searchPost)
+
+	result, err := searchService.PostSearch(&searchPost)
+
+	//result, err := serviceModels.UpdateAccount(accountParameter, searchPost)
 
 	if err != nil {
 		c.IndentedJSON(http.StatusInternalServerError, nil)

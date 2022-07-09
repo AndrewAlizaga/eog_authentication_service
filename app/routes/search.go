@@ -10,7 +10,7 @@ func SearchRouter(router *gin.Engine) {
 
 	SearchRouter := router.Group("/search")
 	{
-		SearchRouter.POST("/search", handlers.Login)
-		SearchRouter.GET("/", handlers.Auth)
+		SearchRouter.POST("/", handlers.Auth, handlers.PostSearch)
+		SearchRouter.GET("/", handlers.Auth, handlers.GetSearches)
 	}
 }

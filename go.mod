@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/AndrewAlizaga/eog_protos v1.0.3-dev-aa-2
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-playground/locales v0.13.0 // indirect
@@ -37,6 +38,8 @@ require (
 )
 
 require (
-	github.com/AndrewAlizaga/grpc_client_eog_go v0.0.1-alpha // indirect
+	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
+	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013 // indirect
+	google.golang.org/grpc v1.47.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 )
