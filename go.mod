@@ -38,6 +38,7 @@ require (
 )
 
 require (
+	github.com/AndrewAlizaga/grpc_client_eog_go v0.0.2-alpha
 	golang.org/x/net v0.0.0-20201021035429-f5854403a974 // indirect
 	google.golang.org/genproto v0.0.0-20200526211855-cb27e3aa2013 // indirect
 	google.golang.org/grpc v1.47.0 // indirect

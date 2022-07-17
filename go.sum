@@ -2,8 +2,8 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 github.com/AndrewAlizaga/eog_protos v1.0.3-dev-aa-2 h1:C3dxYE4S+Fb7DLK7pONwtaYWKR9v4ip7ezhufRiVz7E=
 github.com/AndrewAlizaga/eog_protos v1.0.3-dev-aa-2/go.mod h1:wn70oJvN4MBwrzy+5A5rPb2ffk+qmtljFo/lC+EqrXE=
-github.com/AndrewAlizaga/grpc_client_eog_go v0.0.1-alpha h1:IVdBFKpm23NYJy/ZCpjdAM/nUQwA43Dzu8oLYbJHS40=
-github.com/AndrewAlizaga/grpc_client_eog_go v0.0.1-alpha/go.mod h1:FwPPqBPBY/effryLJeK2LaJw35/J8QdLk+yiLABGL30=
+github.com/AndrewAlizaga/grpc_client_eog_go v0.0.2-alpha h1:82oVWU34/SKZBrsTch0fb141ABeLNP+/NMNl5cbf5p8=
+github.com/AndrewAlizaga/grpc_client_eog_go v0.0.2-alpha/go.mod h1:FwPPqBPBY/effryLJeK2LaJw35/J8QdLk+yiLABGL30=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=

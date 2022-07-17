@@ -78,19 +78,9 @@ func PostSearch(c *gin.Context) {
 
 	var searchPost searchv1.Search
 
-	personParameter := c.Param("person")
-	siteParameter := c.Param("site")
-
-	log.Println(personParameter)
-	log.Println(siteParameter)
-
-	if personParameter == ""{
-		c.IndentedJSON(http.StatusBadRequest, nil)
-		return
-	}
-
-
 	if err := c.BindJSON(&searchPost); err != nil {
+		log.Print("ERROR BINDING BODY JSON")
+		log.Print(err.Error())
 		c.IndentedJSON(http.StatusBadRequest, nil)
 		return
 	}
@@ -101,8 +91,9 @@ func PostSearch(c *gin.Context) {
 	result, err := searchService.PostSearch(&searchPost)
 
 	//result, err := serviceModels.UpdateAccount(accountParameter, searchPost)
-
+	log.Println(result)
 	if err != nil {
+		log.Println("ERROR CALLING EOG: ", err)
 		c.IndentedJSON(http.StatusInternalServerError, nil)
 		return
 	}
