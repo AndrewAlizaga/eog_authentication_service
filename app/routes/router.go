@@ -15,10 +15,11 @@ func MainRouter() {
 
 	fmt.Println("using port: ", port)
 
-	//AUTH ROUTES
-
+	//ROUTE GROUPS
 	AuthRouter(router)
+	SearchRouter(router)
 
+	//ACCOUNT GROUPS
 	account := router.Group("/accounts")
 	{
 		//Get Accounts
